@@ -4,7 +4,7 @@ from config.settings import browser, ignored_exceptions, EC, WebDriverWait, By
 class Utils:
     @staticmethod
     def switch_frame(selector):
-        iframe = WebDriverWait(browser, 50 ,ignored_exceptions=ignored_exceptions).until(EC.presence_of_element_located((By.XPATH, f"//iframe[@id='{selector}']")))
+        iframe = WebDriverWait(browser, 10 ,ignored_exceptions=()ignored_exceptions).until(EC.presence_of_element_located((By.XPATH, f"//iframe[@id='{selector}']")))
         browser.switch_to.frame(iframe)
     
     @staticmethod
@@ -24,7 +24,7 @@ class Utils:
         """ %(id, text))
 
     @staticmethod    
-    def parse_time(time):
+    def parse_show_fixed_game_results(winners):
         time_list = time.split(":")
         # print("Time ", time_list)
         minutes = time_list[0] 
